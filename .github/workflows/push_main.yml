@@ -9,7 +9,6 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
       - name: Set up environment variables
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+        run: |
+          echo "DEFAULT_BRANCH=main" >> $GITHUB_ENV
+          echo "GITHUB_TOKEN=${{secrets.GITHUB_TOKEN}}" >> $GITHUB_ENV
