@@ -1,3 +1,4 @@
+      
 name: Push-To-Main
 on: push
 
@@ -6,10 +7,10 @@ jobs:
     name: pycode
     runs-on: ubuntu-latest
     steps:
-      -name: checkout code
-       uses: actions/checkout@v2
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: Set up environment variables
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-       env:
-         DEFAULT_BRANCH:main
-         GIHUB_TOKEN:${{secrets.GITHUB_TOKEN}}
-         
